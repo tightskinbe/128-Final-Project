@@ -21,7 +21,7 @@ Spaces
 Spaces
 if ($Charcter -eq "Warrior"){
 	$Charcter = "Warrior"
-	clear
+	clear-host
 	write-host "Warrior Selected"}
 else {
 	write-host "Must Type in Warrior, Mage or Archer"
@@ -39,7 +39,7 @@ Spaces
 function Option_1 {
 [string]$Move = Read-host "UP, Down, Left, Right, Items, Observe"
 	if ($Move -eq "Up") {
-		clear
+		clear-host
 		$CharStats
 		write-host "You walk foward and see a Skeleton Corpse laying on the ground. What do you do?"
 		Spaces
@@ -49,7 +49,7 @@ function Option_1 {
 	}
 
 	elseif ($Move -eq "Down") {
-		clear
+		clear-host
 		$CharStats
 		Write-host "You See a Wall And Nothing Seems Intresting."
 		Spaces
@@ -60,7 +60,7 @@ function Option_1 {
 	}
 	
 	elseif ($Move -eq "Left") {
-		clear
+		clear-host
 		$CharStats
 		Write-host "You See a Wall And Nothing Seems Intresting."
 		Spaces
@@ -72,7 +72,7 @@ function Option_1 {
 
 	
 	elseif ($Move -eq "Right") {
-		clear
+		clear-host
 		$CharStats
 		Write-host "You See a Stone Door With no way to open it currently. (Mabye i should come back later.)"
 		Spaces
@@ -83,7 +83,7 @@ function Option_1 {
 	}
 
 	elseif ($Move -eq "Items") {
-		clear
+		clear-host
 		$CharStats
 		Write-host "You Do Not Have Any Items."
 		Spaces
@@ -94,7 +94,7 @@ function Option_1 {
 	}
 
 	elseif ($Move -eq "Observe") {
-		clear
+		clear-host
 		$CharStats
 		Write-host "You see 4 Pathways"
 		Spaces
@@ -108,7 +108,7 @@ Option_1
 
 function Option_2 {
 	if ($Move -eq "Up") {
-	Clear
+	clear-host
 	Return Write-Host "The Skeleton Comes Alive And Starts to Attack!"
 	}
 
@@ -123,7 +123,7 @@ function Skeleton {
 	Spaces
 	$CharStats
 	[string]$choice = Read-Host "Attack, Magic"
-	if ($Choice - eq "Attack")
+	if ($Choice -eq "Attack") {
 		$Check = get-random -maximum 21 -Minimum 1
 		if ($check -eq 20) {
 			Write-Host "Crit!"
@@ -137,7 +137,7 @@ function Skeleton {
 		Write-host Miss...
 		}
 	
-	
+	}
 }
 
 Skeleton
