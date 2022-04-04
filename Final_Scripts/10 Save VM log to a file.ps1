@@ -1,0 +1,1 @@
+Invoke-Command -VMName "Holytankman_VM" -ScriptBlock{get-eventlog -LogName Application -EntryType error | Out-File -FilePath "C:\Users\bryson\Desktop\Errorlogs.txt"}

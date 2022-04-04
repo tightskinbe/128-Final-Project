@@ -11,6 +11,8 @@ function Spaces {
 [int]$Hp = 10
 [int]$Mp = 5
 $Items = @()
+$Skeleton_Hp = 5
+$Attacks = 0
 Write-Host "  Bryson's Holy Adventure    "
 add_lines
 Write-Host "------Pick Your Class--------"
@@ -45,7 +47,6 @@ function Option_1 {
 		Spaces
 		add_lines
 		Spaces
-		return $Move = Read-host "Up, Down, Items, Observe"	
 	}
 
 	elseif ($Move -eq "Down") {
@@ -107,9 +108,11 @@ function Option_1 {
 Option_1
 
 function Option_2 {
+	$Move = Read-host "Up"
+	$CharStats	
 	if ($Move -eq "Up") {
-	clear-host
-	Return Write-Host "The Skeleton Comes Alive And Starts to Attack!"
+		clear-host
+		Write-Host "The Skeleton Comes Alive And Starts to Attack!"
 	}
 
 }
@@ -117,27 +120,41 @@ function Option_2 {
 Option_2
 
 function Skeleton {
-	$Skeleton_Hp = 5
+	$Attacks + 1
 	Spaces
 	add_lines
 	Spaces
 	$CharStats
-	[string]$choice = Read-Host "Attack, Magic"
+	[string]$choice = Read-Host "Attack"
 	if ($Choice -eq "Attack") {
 		$Check = get-random -maximum 21 -Minimum 1
-		if ($check -eq 20) {
+		if ($Check -eq 20) {
 			Write-Host "Crit!"
 			Write-host "You did 2 Dmg"
+			return $Skeleton_Hp - 2
 			}
-		elseif ($check -ge 7) {
+		elseif ($Check -ge 7) {
 			write-host "You did 1 Dmg"
+			return $Skeleton_Hp - 1
 		}
 
-		else {
-		Write-host Miss...
+		elseif ($Check -lt 7) {
+			Write-Host "Miss"
+			return $Skeleton_Hp
 		}
+	else {
+	Write-host "Must enter Attack"
+	}
 	
 	}
 }
-
 Skeleton
+if (Skeleton -eq 5 -and $Attacks -ne 0) {
+	Write-Host "Skeleton deals 2 DMG!"
+	$Hp - 2
+	Skeleton
+}
+elseif (Skeleton -eq 0) {
+	Write-Host "Skeleton has died."
+}
+Read-Host "end of script"
