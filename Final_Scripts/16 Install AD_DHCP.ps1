@@ -1,0 +1,1 @@
+﻿Install-WindowsFeature -ConfigurationFilePath C:\Users\Administrator\Desktop\DeploymentRauDZ.ca.xml
