@@ -1,3 +1,11 @@
+<#
+.SYNOPSIS
+A script that plays rock paper scissors with an ai.
+.DESCRIPTION
+this scrpit will play rock paper scissors with a player that enters the string of rock paper or scissors and will say who wins
+.EXAMPLE
+Rock
+#>
 
 param ([string]$Answer)
 $Answer = Read-Host "Rock, Paper or Scissors?"

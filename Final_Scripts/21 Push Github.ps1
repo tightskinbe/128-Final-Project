@@ -1,3 +1,11 @@
+<#
+.SYNOPSIS
+Opens Github Desktop and pushes code
+.DESCRIPTION
+opens the github desktop app and will push code to my github repo (Git Hub must be closed before starting or else nothing happens.)
+.EXAMPLE
+when ran, pushes changes to repo from visual studio.
+#>
 Start-Process -FilePath "C:\Users\Bryson Pc\Desktop\GitHub Desktop.lnk"
 $GithubApp = New-Object -ComObject wscript.shell;
 Start-Sleep -Seconds 4

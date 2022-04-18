@@ -1,4 +1,13 @@
-﻿New-GPO -Name 'No Removable Drive(RestruantStaff/HR)'
+﻿<#
+.SYNOPSIS
+A scrypt that will deploy our Raudz GPOs
+.DESCRIPTION
+This scrypt will deplay our raudz GPOs that we created in class together
+.EXAMPLE
+deploys gpos on a server with active directory
+#>
+
+New-GPO -Name 'No Removable Drive(RestruantStaff/HR)'
 New-GPO -Name 'No Command Prompt(Staff)'
 New-GPO -Name 'No Control Panel(Staff)'
 New-GPO -Name 'Disable Auto Update(RauDZ)'

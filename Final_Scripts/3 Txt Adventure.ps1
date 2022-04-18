@@ -1,3 +1,13 @@
+<#
+.SYNOPSIS
+A Powershell txt based game created by Bryson 
+.DESCRIPTION
+When run, this script will allow you to enter commands to play a text based adventure game in powershell. currently only the warrior class in added
+.EXAMPLE
+Examples for this script require you to follow screen instructions.
+#>
+
+
 function add_lines {
 	Write-Host "-----------------------------"
 	Write-Host "-----------------------------"
@@ -10,7 +20,6 @@ function Spaces {
 
 [int]$Hp = 10
 [int]$Mp = 5
-$Items = @()
 $Skeleton_Hp = 5
 $Attacks = 0
 Write-Host "  Bryson's Holy Adventure    "

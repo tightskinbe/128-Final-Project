@@ -1,4 +1,12 @@
-﻿
+﻿<#
+.SYNOPSIS
+Creates OU scture and Groups
+.DESCRIPTION
+this scrypt will create OUs and create groups inside them
+.EXAMPLE
+Creates groups for our ou.
+#>
+
 New-ADOrganizationalUnit -Name 'RauDZ' -ProtectedFromAccidentalDeletion $False -Path 'DC=int,DC=raudz,DC=ca'
 New-ADOrganizationalUnit -Name 'IT' -ProtectedFromAccidentalDeletion $False -Path 'OU=RauDZ,DC=int,DC=raudz,DC=ca'
 New-ADOrganizationalUnit -Name 'IT Admin' -ProtectedFromAccidentalDeletion $False -Path 'OU=IT,OU=RauDZ,DC=int,DC=raudz,DC=ca'

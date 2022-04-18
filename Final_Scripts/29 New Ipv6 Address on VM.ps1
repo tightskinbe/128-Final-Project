@@ -1,3 +1,12 @@
+<#
+.SYNOPSIS
+ipv6 address on vm
+.DESCRIPTION
+This scrypt will add a new ipv6 address on a running vm after a few info added
+.EXAMPLE
+ACDC:BBBA:BBBA:AAAA::1
+#>
+
 $VMName = Read-Host "Enter VM Name"
 Invoke-Command -VMName $VMName -ScriptBlock {Get-NetAdapter -Name *}
 $indexofNIC = Read-Host "Enter the Nic Index to change ipv6 Settings"
